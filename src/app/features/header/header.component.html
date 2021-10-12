@@ -1,0 +1,24 @@
+<header id="header">
+    <div class="container-fluid">
+
+        <div id="logo" class="pull-left">
+            <img src="assets/img/logo.jpg" />
+            <a hostclick [attr.href]="'#intro'" class="scrollto">C.atWork</a>
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li *ngFor="let menu of listMenu; let index = index" [ngClass]="{'menu-active': index === 0}"><a hostclick [attr.href]="'#'+menu?.frag">{{menu?.title}}</a></li>
+            </ul>
+        </nav>
+
+        <nav id="mobile-nav">
+            <ul style="touch-action: pan-y;" id="">
+                <li *ngFor="let menu of listMenu;"><a hostclick [attr.href]="'#'+menu?.frag">{{menu?.title}}</a></li>
+            </ul>
+        </nav>
+
+        <button type="button" id="mobile-nav-toggle" (click)="openMenu()"><i class="fa fa-bars"></i></button>
+        <div id="mobile-body-overly"></div>
+    </div>
+</header>

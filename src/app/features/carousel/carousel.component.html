@@ -1,0 +1,16 @@
+<section id="intro">
+  <div class="carousel-fade">
+    <ngb-carousel>
+      <ng-template *ngFor="let card of cards;" ngbSlide>
+        <img style="display: flex;" height="100%" width="100%" [style.background]="sanitize(card?.background)">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2>{{card?.title}}</h2>
+            <p>{{card?.text}}</p>
+            <a hostclick [attr.href]="'#featured-services'" class="btn-get-started scrollto">Inizia il tour</a>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</section>
